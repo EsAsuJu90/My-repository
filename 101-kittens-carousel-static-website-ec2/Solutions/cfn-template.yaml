@@ -13,6 +13,7 @@ Parameters:
     Type: AWS::EC2::KeyPair::KeyName
     Default: ottoaws9
 
+
   instanceType:
     Description: Choose your instance type
     Type: String
