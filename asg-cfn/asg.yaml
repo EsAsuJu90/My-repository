@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description:
+load balancer and autoscaling group for web application 
+  
+  #Parameters:
+
+Resources:
+
+  rTargetGroup:
+   Type: AWS::ElasticLoadBalancingV2::TargetGroup
+   Properties:
+  HealthCheckEnabled: Boolean
+  HealthCheckIntervalSeconds: Integer
+  HealthCheckPath: String
+  HealthCheckPort: String
+  HealthCheckProtocol: String
+  HealthCheckTimeoutSeconds: Integer
+  HealthyThresholdCount: Integer
+  IpAddressType: String
+  Matcher: 
+    Matcher
+  Name: String
+  Port: Integer
+  Protocol: String
+  ProtocolVersion: String
+  Tags: 
+    - Tag
+  TargetGroupAttributes: 
+    - TargetGroupAttribute
+  Targets: 
+    - TargetDescription
+  TargetType: String
+  UnhealthyThresholdCount: Integer
+  VpcId: String
+ 
+
+  rLbSecGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+     GroupDescription: Allow HTTP Traffic
+     GroupName: Allow HTTP
+     SecurityGroupIngress: 
+        - CidrIp: 0.0.0.0/0
+          IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+     Tags: 
+       - Key: Name76rg
+         Value: 1b-allow-http
+     VpcId:
+
+
+
+#Outputs:
